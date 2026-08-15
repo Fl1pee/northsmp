@@ -1,0 +1,142 @@
+const I18N = {
+  ua: {
+    "brand.sub": "Український Майнкрафт Сервер",
+    "nav.home": "Головна",
+    "nav.about": "Про проєкт",
+    "nav.team": "Команда",
+    "nav.donate": "Донат",
+    "nav.faq": "FAQ",
+    "nav.contacts": "Контакти",
+
+    "status.checking": "Пробую достукатися...",
+    "status.online": "Працює :)",
+    "status.offline": "Паламалася",
+    "status.players": "Грає:",
+    "status.unknown": "Хто зна",
+
+    "controls.lang": "Змінити мову",
+    "controls.theme": "Змінити тему",
+
+    "ip.copied": "IP скопійовано! Вдалих смертей)",
+    "ip.copyFailed": "Не вдалось вкрасти. IP: {ip}",
+
+    "hero.title1": "Ласкаво просимо до",
+    "hero.title2": "NorthSMP",
+    "hero.subtitle": "Унікальний Minecraft-сервер, де кожна смерть стає все цікавішою).",
+    "hero.join": "Приєднатися",
+
+    "about.title": "Чим можна займатися?",
+    "about.f1.title": "Торгуйте",
+    "about.f1.text":  "Добувайте ресурси, щоб потім красти їх один в одного за гроші",
+    "about.f2.title": "Виживайте",
+    "about.f2.text":  "Спробуйте вижити 1000 днів без смертей, і тоді жоден летсплей вам не знадобиться.",
+    "about.f3.title": "Спілкуйтесь",
+    "about.f3.text":  "Ну тут наче є нормальні люди, але навіть я сам не впевнений",
+    "about.f4.title": "Адмініструйте",
+    "about.f4.text":  "Як тільки з’явиться набір, ви зможете подати заявку, щоб стати адміністратором!",
+
+    "team.title": "Загін самогубців",
+
+    "donate.joinTitle": "Почати гру",
+    "donate.joinText": "На сервері є вайт-лістік, тому вам потрібно подати заявку в нашому Діскорд-сервері)",
+    "donate.joinCta": "Подати заявку",
+    "donate.title": "Підтримка",
+    "donate.text": "Якщо задонатиш - сам власник подякує... Ага, сам не вірив",
+    "donate.cta": "Підтримати",
+
+    "faq.title": "Часті питання",
+    "faq.q1": "Яке ядро та версія сервера?",
+    "faq.a1": "Сервер працює на Purpur, версія 1.21.10. Але на сервер можна зайти і з новіших версій",
+    "faq.q2": "Чи є whitelist?",
+    "faq.a2": "Та ти що, Пєтя, чи як? Треба ж було читати, що в нас тут вайт-ліст",
+    "faq.q3": "Що робити, якщо мене обікрали?",
+    "faq.a3": "Для початку прочитай правила, якщо ще не читав, а вже потім можеш писати в підтримку в нашому Діскорд-сервері",
+    "faq.q4": "Чи можна грати з друзями та створити спільне місто?",
+    "faq.a4": "Міста в нас уже є... Але дивіться, щоб це потім не стало Північною Кореєю 2.0",
+    "faq.q5": "Як стати частиною команди?",
+    "faq.a5": "Загалом набір проводиться тоді, коли адміністрація втомилася й потрібні нові ідеї та сили, або ж коли взагалі немає команди. Але щоб про все це знати, потрібно читати новини",
+
+    "footer.col.contacts": "Контакти",
+    "footer.col.project": "Проєкт",
+    "footer.col.media": "Медіа",
+    "footer.discord": "Діскорд сервер",
+    "footer.rights": "Усі права наче захищено.",
+    "footer.sys": "Проєкт не пов'язаний з Mojang Studios або Microsoft.",
+    "footer.eon": "Створено з підтримки EON",
+
+    "roles.owner": "Власник",
+    "roles.techadmin": "Тех. адмін",
+    "roles.designer": "Дизайнер",
+    "roles.moderator": "Модератор"
+  },
+  en: {
+    "brand.sub": "Ukrainian Minecraft Server",
+    "nav.home": "Home",
+    "nav.about": "About",
+    "nav.team": "Team",
+    "nav.donate": "Donate",
+    "nav.faq": "FAQ",
+    "nav.contacts": "Contacts",
+
+    "status.checking": "Checking connection...",
+    "status.online": "Online",
+    "status.offline": "Offline",
+    "status.players": "Players:",
+    "status.unknown": "n/a",
+
+    "controls.lang": "Switch language",
+    "controls.theme": "Switch theme",
+
+    "ip.copied": "IP copied! Good luck out there.",
+    "ip.copyFailed": "Couldn't copy it. IP: {ip}",
+
+    "hero.title1": "Welcome to",
+    "hero.title2": "NorthSMP",
+    "hero.subtitle": "A unique Minecraft server where every story starts with a blank page.",
+    "hero.join": "Join",
+
+    "about.title": "What can you do here?",
+    "about.f1.title": "Trade!",
+    "about.f1.text": "Mine resources, sell them at the market (maybe the black one), open your own shops.",
+    "about.f2.title": "Survive!",
+    "about.f2.text": "Classic survival with no unnecessary rules or control.",
+    "about.f3.title": "Socialize!",
+    "about.f3.text": "A friendly community on Discord - you'll make new friends from your first minutes.",
+    "about.f4.title": "Administer",
+    "about.f4.text": "As soon as recruitment opens, you'll be able to apply to become an administrator!",
+
+    "team.title": "Team",
+
+    "donate.joinTitle": "Joining",
+    "donate.joinText": "The server runs a whitelist. Apply on Discord - the moderation team reviews new applications quickly!",
+    "donate.joinCta": "Apply now",
+    "donate.title": "Support",
+    "donate.text": "Your support helps keep the project alive.",
+    "donate.cta": "Support us",
+
+    "faq.title": "Frequently asked questions",
+    "faq.q1": "What core and version does the server run?",
+    "faq.a1": "The server runs on Purpur, version 1.21.10. But you can also join with newer versions",
+    "faq.q2": "Is there a whitelist?",
+    "faq.a2": "Yes, the server runs a whitelist. Apply on Discord",
+    "faq.q3": "What if I get robbed?",
+    "faq.a3": "Message a Discord ticket right away with the details (nickname, time, coordinates). The team will review it quickly",
+    "faq.q4": "Can I play with friends and build a shared town?",
+    "faq.a4": "Yes, you're allowed to create new shared towns on the server, and a few already exist)",
+    "faq.q5": "How do I join the team?",
+    "faq.a5": "Watch the announcements on Discord - recruitment opens periodically, depending on the project's needs.",
+
+    "footer.col.contacts": "Contacts",
+    "footer.col.project": "Project",
+    "footer.col.media": "Media",
+    "footer.discord": "Discord server",
+    "footer.rights": "All rights reserved.",
+    "footer.sys": "This project is not affiliated with Mojang Studios or Microsoft.",
+    "footer.eon": "Made with support from EON",
+
+    "roles.owner": "Owner",
+    "roles.techadmin": "Tech admin",
+    "roles.designer": "Designer",
+    "roles.moderator": "Moderator"
+  }
+};
