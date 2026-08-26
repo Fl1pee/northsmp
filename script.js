@@ -3,31 +3,43 @@
 
   const SERVER_IP = 'north.mcbuild.fun';
   const STATUS_API = `https://api.mcsrvstat.us/3/${SERVER_IP}`;
+  
   const ROLE_ICONS = {
     'roles.owner': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8 3.5 3L12 5l5.5 6L21 8l-1.5 10h-15L3 8Z"/></svg>',
     'roles.techadmin': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg>',
     'roles.designer': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h1.5c2.2 0 4-1.8 4-4C20.5 6 16.7 3 12 3Z"/><circle cx="7.5" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="8" r="1" fill="currentColor" stroke="none"/></svg>',
-    'roles.moderator': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/></svg>'
+    'roles.moderator': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/></svg>',
+    'roles.admin': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z"/><path d="M12 8v4M12 16h.01"/></svg>'
   };
+  
   const ROLE_COLORS = {
     'roles.owner': { bg: 'var(--amber-bg)', fg: 'var(--amber-fg)' },
     'roles.techadmin': { bg: 'var(--blue-bg)', fg: 'var(--blue-fg)' },
     'roles.designer': { bg: 'var(--pink-bg)', fg: 'var(--pink-fg)' },
-    'roles.moderator': { bg: 'var(--green-bg)', fg: 'var(--green-fg)' }
+    'roles.moderator': { bg: 'var(--green-bg)', fg: 'var(--green-fg)' },
+    'roles.admin': { bg: 'var(--coral-bg)', fg: 'var(--coral-fg)' }
   };
-  const DISCORD_ICON_SVG = '<svg viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>';
-
+  
   const GLOBE_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9Z"/></svg>';
-
   const TELEGRAM_ICON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>';
+  
+  const YOUTUBE_ICON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>';
+  const TWITCH_ICON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>';
+  const TIKTOK_ICON_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>';
 
   const TEAM = [
-    { name: 'Fl1pee',    nick: 'Fl1pee',      roleKey: 'roles.owner',     socials: [{ icon: GLOBE_ICON_SVG, url: 'https://fl1pee.carrd.co/' }] },
+    { name: 'Fl1pee',    nick: 'Fl1pee',      roleKey: 'roles.owner',     socials: [{ key: 'social.website', icon: GLOBE_ICON_SVG, url: 'https://fl1pee.carrd.co/' }] },
     { name: 'iPrudent',  nick: 'iPrudent',    roleKey: 'roles.techadmin', socials: [] },
     { name: 'As0rp',     nick: 'l_As0rp_l',   roleKey: 'roles.techadmin', socials: [] },
+    { name: 'Neo_Aleks', nick: 'Neo_Aleks',   roleKey: 'roles.admin',     socials: [
+      { key: 'social.youtube', icon: YOUTUBE_ICON_SVG, url: 'https://www.youtube.com/@Neo_Aleks' },
+      { key: 'social.twitch', icon: TWITCH_ICON_SVG, url: 'https://www.twitch.tv/neo_aleks' },
+      { key: 'social.tiktok', icon: TIKTOK_ICON_SVG, url: 'https://www.tiktok.com/@neo_aleks' },
+      { key: 'social.telegram', icon: TELEGRAM_ICON_SVG, url: 'https://t.me/TheNeoAleks' }
+    ] },
     { name: 'Dushenka',  nick: 'dushenkaaa_', roleKey: 'roles.designer',  socials: [] },
-    { name: 'Jack_835_', nick: 'Jack_835_',   roleKey: 'roles.moderator', socials: [{ icon: TELEGRAM_ICON_SVG, url: 'https://t.me/sesepakun' }] },
-    { name: 'Keady',     nick: 'keady_837',   roleKey: 'roles.moderator', socials: [{ icon: TELEGRAM_ICON_SVG, url: 'https://t.me/bulochka313' }] }
+    { name: 'Jack_835_', nick: 'Jack_835_',   roleKey: 'roles.moderator', socials: [{ key: 'social.telegram', icon: TELEGRAM_ICON_SVG, url: 'https://t.me/sesepakun' }] },
+    { name: 'Keady',     nick: 'keady_837',   roleKey: 'roles.moderator', socials: [{ key: 'social.telegram', icon: TELEGRAM_ICON_SVG, url: 'https://t.me/bulochka313' }] }
   ];
 
   const AVATAR_LOCAL_DIR = 'avatars/';
@@ -152,6 +164,15 @@
         playersValue.textContent = t('status.unknown');
       }
     }
+
+    const playersBadge = document.getElementById('playersValueBadge');
+    if (playersBadge) {
+      if (isOnline && data.players) {
+        playersBadge.textContent = `${data.players.online ?? 0}/${data.players.max ?? '-'}`;
+      } else {
+        playersBadge.textContent = t('status.unknown');
+      }
+    }
   }
 
   async function fetchServerStatus() {
@@ -165,6 +186,7 @@
       updateStatusUI(lastStatus);
     }
   }
+
   function renderTeam() {
     const grid = document.getElementById('teamGrid');
     if (!grid) return;
@@ -177,12 +199,12 @@
 
       const socialsHtml = (member.socials && member.socials.length)
         ? `<div class="team-socials">${member.socials.map((s) => `
-            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="${member.name} social link">${s.icon}</a>
+            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="team-social-btn" aria-label="${member.name} ${t(s.key)}" title="${t(s.key)}">${s.icon}</a>
           `).join('')}</div>`
         : '';
 
       return `
-        <article class="team-card reveal">
+        <article class="team-card spotlight-card reveal">
           <div class="team-avatar-frame">
             <img
               src="${localSrc}"
@@ -202,6 +224,7 @@
 
     grid.querySelectorAll('.reveal').forEach(observeReveal);
   }
+  
   function initAccordion() {
     document.querySelectorAll('.accordion-header').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -211,6 +234,7 @@
       });
     });
   }
+  
   function initNavIndicator() {
     const nav = document.getElementById('mainNav');
     const indicator = document.getElementById('navIndicator');
@@ -231,6 +255,7 @@
       indicator.style.opacity = '0';
     });
   }
+  
   function initMobileNav() {
     const burger = document.getElementById('burgerBtn');
     const nav = document.getElementById('mainNav');
@@ -250,6 +275,7 @@
       });
     });
   }
+  
   let revealObserver = null;
 
   function observeReveal(el) {
@@ -261,6 +287,7 @@
     }
   }
 
+  // Оновлена функція для плавної появи
   function initScrollReveal() {
     const items = document.querySelectorAll('.reveal');
 
@@ -276,10 +303,73 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px 0px 0px' });
 
     items.forEach((el) => revealObserver.observe(el));
+
+    // Примусово показуємо Hero-елементи, які вже у в'юпорті, з невеликою затримкою
+    setTimeout(() => {
+      items.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-visible');
+        }
+      });
+    }, 150); // Невелика затримка для кращого ефекту
   }
+
+  function initSpotlight() {
+    const cards = document.querySelectorAll('.spotlight-card');
+    cards.forEach(card => {
+      card.style.setProperty('--mouse-x', '-100px');
+      card.style.setProperty('--mouse-y', '-100px');
+
+      card.addEventListener('mouseenter', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--mouse-x', '-100px');
+        card.style.setProperty('--mouse-y', '-100px');
+      });
+    });
+  }
+
+  function initScrollTopButton() {
+    const btn = document.getElementById('scrollTopBtn');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  function initLogoScroll() {
+    const brand = document.getElementById('brandLink');
+    if (!brand) return;
+
+    brand.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   function init() {
     const yearEl = document.getElementById('footerYear');
     if (yearEl) {
@@ -307,6 +397,9 @@
     initMobileNav();
     initNavIndicator();
     initAccordion();
+    initSpotlight();
+    initScrollTopButton();
+    initLogoScroll();
 
     applyTranslations();
     initScrollReveal();
