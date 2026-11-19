@@ -342,3 +342,7 @@ body[data-page="news"] .content-card h1{margin:0}
 .wb-note{color:#d0c6eb;text-align:center;margin:0}
 
 .recipe img{display:block;width:100%;height:auto;border-radius:10px;margin-bottom:12px;image-rendering:pixelated;background:#4f4f4f}
+
+/* Іконка та сніговичок: пропорції зберігаються, нічого не розтягується */
+.foot-logo img{object-fit:contain}
+.hero-art img{width:auto;height:100%;max-width:100%;object-fit:contain}
