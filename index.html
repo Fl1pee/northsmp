@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NorthSMP - український Minecraft сервер</title>
+<meta name="description" content="NorthSMP - український Minecraft-сервер на Paper 26.2, де кожна смерть стає все цікавішою.">
+<meta name="theme-color" content="#0a0816">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="siteNavigation"></div>
+<main id="top">
+<section class="hero" id="home">
+  <div class="ad-bar" data-i18n="ad.text">Тут могла бути ваша реклама</div>
+  <div class="hero-in">
+    <p class="kicker" data-i18n="hero.kicker"></p>
+    <h1 class="hero-title">NorthSMP</h1>
+    <button class="badge" id="ipBtn" type="button" title="Copy IP">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      IP: northsmp.org <b>✦</b> Paper <b>✦</b> 26.2
+    </button>
+    <p class="hero-sub" data-i18n="hero.sub"></p>
+    <div class="hero-cta">
+      <a href="#about" class="btn"><span data-i18n="hero.cta"></span></a>
+      <a href="https://discord.com/invite/XdEPbvGeKm" target="_blank" rel="noopener noreferrer" class="btn ghost" data-i18n="join.startCta"></a>
+    </div>
+  </div>
+    <button type="button" class="hero-art secret-logo" id="heroLogo" aria-label="NorthSMP" title="NorthSMP"><img src="logo.png" alt=""></button>
+  </section>
+<section class="section" id="about">
+  <h2 class="h2 reveal" data-i18n="about.title"></h2>
+  <div class="grid4">
+    <article class="glass spot card reveal" style="--d:0">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg></div>
+      <h3 data-i18n="f1.t"></h3><p data-i18n="f1.p"></p>
+    </article>
+    <article class="glass spot card reveal" style="--d:1">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h11v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2M5 4h11"/></svg></div>
+      <h3 data-i18n="f2.t"></h3><p data-i18n="f2.p"></p>
+    </article>
+    <article class="glass spot card reveal" style="--d:2">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></svg></div>
+      <h3 data-i18n="f3.t"></h3><p data-i18n="f3.p"></p>
+    </article>
+    <article class="glass spot card reveal" style="--d:3">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3l3 3-9 9-3-3z"/><path d="M9 12l-6 6a2 2 0 0 0 0 3 2 2 0 0 0 3 0l6-6"/></svg></div>
+      <h3 data-i18n="f4.t"></h3><p data-i18n="f4.p"></p>
+    </article>
+  </div>
+  <p class="about-more reveal" data-i18n="about.more"></p>
+</section>
+<div class="divider"></div>
+<section class="section" id="joinwrap">
+  <div class="twin">
+    <div class="promo hot reveal" id="join" style="--d:0">
+      <div class="promo-in">
+        <div class="promo-ico heart"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.840 4.610a5.500 5.500 0 0 0-7.780 0L12 5.670l-1.060-1.060a5.500 5.500 0 0 0-7.780 7.780l1.060 1.060L12 21.230l7.780-7.780 1.060-1.060a5.500 5.500 0 0 0 0-7.780z"/></svg></div>
+        <h3 data-i18n="join.startT"></h3>
+        <p data-i18n="join.startP"></p>
+        <a class="btn" href="https://discord.com/invite/XdEPbvGeKm" target="_blank" rel="noopener noreferrer" data-i18n="join.startCta"></a>
+      </div>
+    </div>
+    <div class="promo hot reveal" id="support" style="--d:1">
+      <div class="promo-in">
+        <div class="promo-ico heart"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.840 4.610a5.500 5.500 0 0 0-7.780 0L12 5.670l-1.060-1.060a5.500 5.500 0 0 0-7.780 7.780l1.060 1.060L12 21.230l7.780-7.780 1.060-1.060a5.500 5.500 0 0 0 0-7.780z"/></svg></div>
+        <h3 data-i18n="join.supT"></h3>
+        <p data-i18n="join.supP"></p>
+        <a class="btn" href="https://donatello.to/Fl1pee" target="_blank" rel="noopener noreferrer" data-i18n="join.supCta"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="section" id="faq">
+  <h2 class="h2 reveal" data-i18n="faq.title"></h2>
+  <div class="faq" id="faqList"></div>
+</section>
+</main>
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <button type="button" class="foot-logo secret-logo" id="footerLogo" aria-label="NorthSMP"><img src="logo.png" alt=""><span>North<b>SMP</b></span></button>
+      <p data-i18n="brand.sub"></p>
+    </div>
+    <div class="foot-col"><h4 data-i18n="foot.c1"></h4>
+      <a href="https://discord.com/invite/XdEPbvGeKm" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="https://t.me/NorthSMP_UA" target="_blank" rel="noopener noreferrer">Telegram</a>
+</div>
+    <div class="foot-col"><h4 data-i18n="foot.c2"></h4>
+      <a href="wiki.html" data-keep-lang="wiki.html" data-i18n="nav.wiki"></a><a href="gazeta.html" data-keep-lang="gazeta.html" data-i18n="nav.gazeta"></a></div>
+    <div class="foot-col"><h4 data-i18n="foot.c3"></h4>
+      <a href="https://www.youtube.com/@NorthSMP_UA" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.tiktok.com/@northsmp_ua" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a href="https://donatello.to/Fl1pee" target="_blank" rel="noopener noreferrer" data-i18n="nav.support"></a></div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026–2027 NorthSMP. <span data-i18n="foot.rights"></span></p>
+  </div>
+  <p class="legal" data-i18n="foot.legal"></p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<!-- Пасхалка: 5 натискань на логотип → два відео YouTube. Завантажуються лише після активації. -->
+<div id="easterEgg" class="easter-egg" hidden role="dialog" aria-modal="true" aria-label="Секретна пасхалка">
+  <div class="easter-egg-head">
+    <span>🎮 <span data-i18n="egg.title">Секретний режим</span></span>
+    <button class="easter-close" id="easterClose" type="button" aria-label="Закрити">×</button>
+  </div>
+  <div class="easter-videos">
+    <div class="easter-video">
+      <div class="easter-screen"><iframe id="subwayEmbed" title="Subway Surfers — ігрове відео" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="subwayEmbedNotice" class="easter-local-notice" hidden><span class="easter-notice-icon">▶</span><strong>Subway Surfers</strong><span data-i18n="egg.local">Для перегляду прямо на сайті запустіть його через локальний сервер.</span><a class="easter-source" href="https://youtu.be/i0M4ARe9v0Y?t=40" target="_blank" rel="noopener noreferrer">Відкрити на YouTube ↗</a></div></div>
+    </div>
+    <div class="easter-video">
+      <div class="easter-screen"><iframe id="parkourEmbed" title="Minecraft Parkour — fails and bloopers" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="parkourEmbedNotice" class="easter-local-notice" hidden><span class="easter-notice-icon">▶</span><strong>Minecraft Parkour</strong><span data-i18n="egg.local">Для перегляду прямо на сайті запустіть його через локальний сервер.</span><a class="easter-source" href="https://youtu.be/9vNlPqNBOt8?t=40" target="_blank" rel="noopener noreferrer">Відкрити на YouTube ↗</a></div></div>
+    </div>
+  </div>
+  <p class="easter-hint" data-i18n="egg.exit">Натисни Esc, щоб закрити</p>
+</div>
+<script src="navigation.js"></script>
+<script src="script.js"></script>
+<script src="snowflakes.js"></script>
+<script src="easter-egg.js"></script>
+</body>
+</html>
