@@ -33,7 +33,7 @@
   const items = [
     ['home', './#home'], ['about', './#about'], ['join', './#join'],
     ['support', './#support'], ['faq', './#faq'],
-    ['wiki', 'wiki'], ['news', 'gazeta']
+    ['wiki', 'wiki'], ['news', 'news']
   ];
   const makeIcon = key => `<svg viewBox="0 0 24 24" aria-hidden="true">${icon[key]}</svg>`;
   mount.innerHTML = `<aside class="side drop" id="drop" aria-label="${TEXT[lang].nav}">
