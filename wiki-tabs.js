@@ -1,5 +1,4 @@
 "use strict";
-/* Вкладки всередині сторінки вікі та їхній переклад. */
 (() => {
   const tabs = [...document.querySelectorAll('.wiki-tab')];
   const panels = [...document.querySelectorAll('.wiki-panel')];
