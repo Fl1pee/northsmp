@@ -168,7 +168,6 @@ function applyLang() {
   renderFaq();
 }
 
-// Мову й навігацію перемикає спільний navigation.js.
 document.addEventListener('northsmp:languageChanged', event => {
   lang = event.detail.lang;
   applyLang();
@@ -195,7 +194,5 @@ $('#ipBtn').addEventListener('click', async () => {
   toast(t('copied'));
 });
 
-// Сніжинки винесені до snowflakes.js.
-// Секретна пасхалка винесена до easter-egg.js.
 
 applyLang();
