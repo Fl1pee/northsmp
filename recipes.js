@@ -1,11 +1,9 @@
 "use strict";
-/* Рецепти вікі: картки з пошуком і вікно з картинкою рецепта. */
 (() => {
   const list = document.getElementById('recipeList');
   if (!list) return;
 
-  /* Порядок і назви рецептів. Картинки лежать у wiki-media/recipes/. */
-  const RECIPES = [
+    const RECIPES = [
     { slug: 'pillow', name: { ua: 'Подушка', en: 'Pillow' } },
     { slug: 'light', name: { ua: 'Світло', en: 'Light' } },
     { slug: 'invisible-frame', name: { ua: 'Невидима рамка', en: 'Invisible Item Frame' } },
@@ -40,8 +38,7 @@
     return node;
   };
 
-  /* Вікно */
-  const modal = el('div', 'recipe-modal');
+    const modal = el('div', 'recipe-modal');
   modal.hidden = true;
   modal.setAttribute('role', 'dialog');
   modal.setAttribute('aria-modal', 'true');
@@ -83,8 +80,7 @@
   modal.addEventListener('click', e => { if (e.target === modal) closeRecipe(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeRecipe(); });
 
-  /* Картки */
-  const buildCards = l => {
+    const buildCards = l => {
     list.replaceChildren();
     for (const r of RECIPES) {
       const card = el('button', 'recipe');
