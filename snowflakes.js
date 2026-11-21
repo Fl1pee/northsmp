@@ -1,7 +1,5 @@
 'use strict';
 
-// Сніжинки замість старих круглих частинок.
-// Налаштування: змінюйте SNOW_COUNT_MULTIPLIER і SNOW_SPEED_MULTIPLIER.
 (() => {
   const SNOW_COUNT_MULTIPLIER = 1;
   const SNOW_SPEED_MULTIPLIER = 1;
