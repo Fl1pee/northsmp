@@ -1,5 +1,4 @@
 "use strict";
-/* Відображення новин NorthSMP. Зазвичай цей файл редагувати не потрібно. */
 (() => {
   const feed = document.getElementById("newsList");
   if (!feed) return;
