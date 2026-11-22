@@ -58,7 +58,6 @@
     if (!current) return;
     wbTitle.textContent = t(current.name, l);
     closeBtn.setAttribute('aria-label', UI[l].close);
-    closeBtn.title = UI[l].close;
     wbBody.replaceChildren();
     if (current.slug) {
       const img = el('img', 'wb-img');
