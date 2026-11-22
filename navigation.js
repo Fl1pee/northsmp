@@ -13,7 +13,7 @@
     en: { home:'Home', about:'About', join:'Join', support:'Support', faq:'FAQ', wiki:'Wiki', news:'News', pack:'Modpack', lang:'Language · EN', menu:'Open menu', nav:'Site navigation', switch:'Перемкнути українською' }
   };
   const MODPACK_LINKS = {
-    curseforge: 'https://edge.forgecdn.net/files/9700/399/NSMP.zip',
+    curseforge: 'https://files.catbox.moe/ssfxuq.zip',
     modrinth: 'https://cdn.modrinth.com/data/cg4XKvE1/versions/xJ4OBVvj/NSMP.mrpack?mr_download_reason=standalone'
   };
   const icon = {
@@ -129,7 +129,6 @@
     drop.setAttribute('aria-label', TEXT[lang].nav);
     burger.setAttribute('aria-label', TEXT[lang].menu);
     for (const el of drop.querySelectorAll('[data-side-i18n]')) el.textContent = TEXT[lang][el.dataset.sideI18n];
-    langBtn.title = TEXT[lang].switch;
     langBtn.setAttribute('aria-label', TEXT[lang].switch);
     updateLinks();
   }
